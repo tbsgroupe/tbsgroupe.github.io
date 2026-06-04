@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TBS GROUPE – Découvrez nos réalisations : construction, rénovation, aménagement intérieur et génie civil." />
+  <title>Réalisations – TBS GROUPE</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .projects-masonry {
+      columns: 3; column-gap: 24px;
+    }
+    .masonry-item {
+      break-inside: avoid; margin-bottom: 24px;
+      border-radius: var(--radius-lg); overflow: hidden;
+      background: linear-gradient(145deg, var(--navy-mid), var(--charcoal));
+      border: 1px solid rgba(255,255,255,.07);
+      position: relative; cursor: pointer;
+      transition: var(--transition);
+    }
+    .masonry-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(201,168,76,.25); }
+    .masonry-thumb {
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(145deg, rgba(201,168,76,.08), transparent);
+      font-size: 3.5rem; color: var(--gold);
+    }
+    .masonry-thumb.tall   { height: 360px; }
+    .masonry-thumb.medium { height: 240px; }
+    .masonry-thumb.short  { height: 180px; }
+    .masonry-info { padding: 20px 22px 24px; }
+    .masonry-cat { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .masonry-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; }
+    .masonry-meta { font-size: .78rem; color: var(--text-muted); margin-top: 6px; display: flex; align-items: center; gap: 12px; }
+    .masonry-tag { padding: 3px 10px; border-radius: 50px; background: rgba(201,168,76,.1); color: var(--gold); font-size: .7rem; font-weight: 600; }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(10,22,40,.95); backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; opacity: 0; pointer-events: none;
+      transition: opacity .35s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: var(--navy-mid); border: 1px solid rgba(201,168,76,.2);
+      border-radius: var(--radius-xl); max-width: 800px; width: 100%;
+      max-height: 90vh; overflow-y: auto;
+      transform: translateY(40px); transition: transform .35s ease;
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 36px 36px 24px; }
+    .modal-body { padding: 0 36px 36px; }
+    .modal-close {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,.08); display: grid; place-items: center;
+      cursor: pointer; font-size: 1.2rem; transition: var(--transition); flex-shrink: 0;
+      border: none; color: var(--white);
+    }
+    .modal-close:hover { background: rgba(201,168,76,.2); color: var(--gold); }
+    .modal-thumb {
+      width: 100%; height: 220px; border-radius: var(--radius-md);
+      background: linear-gradient(145deg, rgba(201,168,76,.1), transparent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; margin-bottom: 24px;
+    }
+    .modal-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+    .spec-item { background: rgba(255,255,255,.04); border-radius: var(--radius-sm); padding: 14px 16px; }
+    .spec-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .spec-val { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--gold); }
+
+    @media (max-width: 900px) { .projects-masonry { columns: 2; } }
+    @media (max-width: 580px) { .projects-masonry { columns: 1; } }
+  </style>
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">TBS GROUPE</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">T</div>
+      <div>TBS GROUPE<div class="logo-sub">Excellence &amp; Expertise</div></div>
+    </a>
+    <nav id="main-nav">
+      <a href="index.html">Accueil</a><a href="about.html">À propos</a>
+      <a href="services.html">Services</a><a href="projets.html" class="active">Réalisations</a>
+      <a href="blog.html">Actualités</a><a href="contact.html" class="nav-cta">Devis gratuit</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span>Réalisations</div>
+    <div class="badge" style="margin-inline:auto;margin-bottom:20px">Portfolio</div>
+    <h1>Nos <em>réalisations</em></h1>
+    <p>500+ projets livrés, autant de défis relevés. Découvrez une sélection de nos meilleures réalisations, témoins de notre savoir-faire.</p>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="section-py">
+  <div class="container">
+    <div class="projects-filter reveal">
+      <button class="filter-btn active" data-filter="all">Tous les projets</button>
+      <button class="filter-btn" data-filter="construction">🏗️ Construction</button>
+      <button class="filter-btn" data-filter="renovation">🔨 Rénovation</button>
+      <button class="filter-btn" data-filter="amenagement">🎨 Aménagement</button>
+      <button class="filter-btn" data-filter="genie-civil">🏛️ Génie Civil</button>
+    </div>
+
+    <div class="projects-masonry reveal" id="projectsGrid">
+
+      <div class="masonry-item" data-category="construction" data-title="Tour Horizon" data-loc="Lyon, 2024" data-desc="Construction d'une tour de bureaux de 18 étages en plein cœur de La Défense lyonnaise. Chantier pilote RE2020 avec intégration BIM complète." data-surface="8 200 m²" data-duration="24 mois" data-budget="12,4 M€">
+        <div class="masonry-thumb tall">🏢</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Construction commerciale</div>
+          <div class="masonry-title">Tour Horizon</div>
+          <div class="masonry-meta"><span>📍 Lyon, 69</span><span class="masonry-tag">2024</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="renovation" data-title="Hôtel Particulier XVIIe" data-loc="Paris 8e, 2023" data-desc="Réhabilitation complète d'un hôtel particulier du XVIIe siècle, classé monument historique. Restauration des éléments patrimoniaux et mise aux normes actuelles." data-surface="920 m²" data-duration="14 mois" data-budget="3,8 M€">
+        <div class="masonry-thumb medium">🏛️</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Rénovation patrimoniale</div>
+          <div class="masonry-title">Hôtel Particulier XVIIe</div>
+          <div class="masonry-meta"><span>📍 Paris 8e</span><span class="masonry-tag">2023</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="amenagement" data-title="Penthouse Les Minimes" data-loc="Marseille, 2024" data-desc="Aménagement intérieur d'un penthouse de 380m² avec vue panoramique sur la Méditerranée. Design contemporain, mobilier sur mesure, matériaux d'exception." data-surface="380 m²" data-duration="8 mois" data-budget="1,2 M€">
+        <div class="masonry-thumb short">✨</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Aménagement premium</div>
+          <div class="masonry-title">Penthouse Les Minimes</div>
+          <div class="masonry-meta"><span>📍 Marseille</span><span class="masonry-tag">2024</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="construction" data-title="Résidence Le Parc" data-loc="Bordeaux, 2023" data-desc="Programme immobilier de 48 logements BBC dans un écrin de verdure. Architecture bioclimatique, toitures végétalisées et espaces communs paysagers." data-surface="4 100 m²" data-duration="18 mois" data-budget="6,9 M€">
+        <div class="masonry-thumb medium">🌿</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Résidentiel collectif</div>
+          <div class="masonry-title">Résidence Le Parc</div>
+          <div class="masonry-meta"><span>📍 Bordeaux, 33</span><span class="masonry-tag">2023</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="genie-civil" data-title="Pont de la Cassine" data-loc="Grenoble, 2023" data-desc="Construction d'un ouvrage d'art piétonnier de 120m sur l'Isère. Structure mixte acier-béton, intégration paysagère et éclairage LED architectural." data-surface="120 ml" data-duration="10 mois" data-budget="2,1 M€">
+        <div class="masonry-thumb tall">🌉</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Ouvrage d'art</div>
+          <div class="masonry-title">Pont de la Cassine</div>
+          <div class="masonry-meta"><span>📍 Grenoble, 38</span><span class="masonry-tag">2023</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="renovation" data-title="Villa Les Cèdres" data-loc="Cannes, 2024" data-desc="Rénovation totale d'une villa de 650m² sur les hauteurs de Cannes. Extension de 120m², piscine à débordement, cave à vin et home cinéma." data-surface="650 m²" data-duration="11 mois" data-budget="2,6 M€">
+        <div class="masonry-thumb short">🏠</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Rénovation villa luxe</div>
+          <div class="masonry-title">Villa Les Cèdres</div>
+          <div class="masonry-meta"><span>📍 Cannes, 06</span><span class="masonry-tag">2024</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="construction" data-title="Entrepôt Logipro" data-loc="Bordeaux, 2023" data-desc="Construction d'un entrepôt logistique de 12 000m² avec bureaux attenant. Structure métallique, toiture photovoltaïque et automatisation des flux." data-surface="12 000 m²" data-duration="9 mois" data-budget="4,5 M€">
+        <div class="masonry-thumb medium">🏭</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Bâtiment industriel</div>
+          <div class="masonry-title">Entrepôt Logipro</div>
+          <div class="masonry-meta"><span>📍 Bordeaux, 33</span><span class="masonry-tag">2023</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="amenagement" data-title="Flagship Store Lumière" data-loc="Paris 1er, 2024" data-desc="Aménagement d'un concept store de luxe sur 3 niveaux. Scénographie lumineuse sur mesure, mobilier créateur et installation artistique permanente." data-surface="280 m²" data-duration="5 mois" data-budget="780 k€">
+        <div class="masonry-thumb tall">🛍️</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Commerce retail premium</div>
+          <div class="masonry-title">Flagship Store Lumière</div>
+          <div class="masonry-meta"><span>📍 Paris 1er</span><span class="masonry-tag">2024</span></div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="genie-civil" data-title="Bassin de rétention Arc-en-Ciel" data-loc="Nantes, 2022" data-desc="Réalisation d'un ouvrage de gestion des eaux pluviales de 8 000 m³. Génie civil hydraulique, étanchéité et végétalisation des berges." data-surface="8 000 m³" data-duration="12 mois" data-budget="1,8 M€">
+        <div class="masonry-thumb short">💧</div>
+        <div class="masonry-info">
+          <div class="masonry-cat">Hydraulique urbaine</div>
+          <div class="masonry-title">Bassin Arc-en-Ciel</div>
+          <div class="masonry-meta"><span>📍 Nantes, 44</span><span class="masonry-tag">2022</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal-overlay" id="projectModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="badge" id="modal-cat" style="margin-bottom:12px"></div>
+        <h2 id="modal-title" style="font-family:var(--font-display);font-size:2rem;font-weight:300"></h2>
+        <p id="modal-loc" style="color:var(--text-muted);font-size:.85rem;margin-top:6px"></p>
+      </div>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-thumb" id="modal-thumb"></div>
+      <p id="modal-desc" style="color:var(--text-muted);line-height:1.9;font-size:.92rem"></p>
+      <div class="modal-specs">
+        <div class="spec-item">
+          <div class="spec-label">Surface</div>
+          <div class="spec-val" id="modal-surface"></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Durée</div>
+          <div class="spec-val" id="modal-duration"></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Budget</div>
+          <div class="spec-val" id="modal-budget"></div>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="margin-top:8px">Projet similaire ? Contactez-nous <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section section-py">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-text">
+        <h2 class="section-title">Votre projet rejoint <em>bientôt</em> cette galerie ?</h2>
+        <p>Chaque projet que vous nous confiez devient une nouvelle fierté. Contactez-nous pour discuter de vos ambitions.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Démarrer mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="font-size:1.3rem">
+          <div class="logo-mark">T</div>
+          <div>TBS GROUPE<div class="logo-sub">Excellence &amp; Expertise</div></div>
+        </a>
+        <p>Expert en construction, rénovation et aménagement premium depuis 2008.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">in</a><a href="#" class="social-link">f</a>
+          <a href="#" class="social-link">📷</a><a href="#" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a><a href="about.html">À propos</a>
+          <a href="services.html">Services</a><a href="projets.html">Réalisations</a>
+          <a href="blog.html">Actualités</a><a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Catégories</h4>
+        <div class="footer-links">
+          <a href="#">Construction neuve</a><a href="#">Rénovation</a>
+          <a href="#">Aménagement</a><a href="#">Génie civil</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div style="font-size:.83rem;color:var(--text-muted);line-height:2">
+          📍 12 rue de la Construction, 75008 Paris<br>
+          📞 01 23 45 67 89<br>✉️ contact@tbs-groupe.fr
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TBS GROUPE. Tous droits réservés.</p>
+      <div class="footer-legal"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<script>
+  window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 900); });
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); nav.classList.toggle('open'); });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.masonry-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      items.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Modal
+  const modal = document.getElementById('projectModal');
+  const modalClose = document.getElementById('modalClose');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      document.getElementById('modal-cat').textContent = item.querySelector('.masonry-cat').textContent;
+      document.getElementById('modal-title').textContent = item.dataset.title;
+      document.getElementById('modal-loc').textContent = '📍 ' + item.dataset.loc;
+      document.getElementById('modal-desc').textContent = item.dataset.desc;
+      document.getElementById('modal-thumb').textContent = item.querySelector('.masonry-thumb').textContent.trim();
+      document.getElementById('modal-surface').textContent = item.dataset.surface;
+      document.getElementById('modal-duration').textContent = item.dataset.duration;
+      document.getElementById('modal-budget').textContent = item.dataset.budget;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { const d = e.target.dataset.delay || 0; setTimeout(() => e.target.classList.add('visible'), d * 100); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
