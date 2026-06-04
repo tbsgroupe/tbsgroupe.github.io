@@ -3,342 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TBS GROUPE – Construction, rénovation, aménagement intérieur, génie civil, maîtrise d'œuvre et bureau d'études." />
-  <title>Nos Services – TBS GROUPE</title>
+  <meta name="description" content="Services TBS Groupe – Transport lourd, transport léger, logistique portuaire, messagerie, affrètement et entreposage au Havre." />
+  <title>Services — TBS GROUPE | Logistique & Transport Le Havre</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .service-detail {
-      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,6vw,80px); align-items: start;
-      padding-block: clamp(60px,8vw,100px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .service-detail:last-of-type { border-bottom: none; }
-    .service-detail.reverse { direction: rtl; }
-    .service-detail.reverse > * { direction: ltr; }
-    .service-detail-visual {
-      border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 4/3;
-      background: linear-gradient(145deg, var(--navy-mid), var(--charcoal));
-      border: 1px solid rgba(201,168,76,.1);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 16px; font-size: 4rem; color: var(--gold);
-      position: relative;
-    }
-    .service-detail-visual::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,.06), transparent);
-    }
-    .service-label {
-      font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
-      color: rgba(201,168,76,.8); font-family: var(--font-body);
-      position: absolute; top: 20px; left: 20px;
-      background: rgba(10,22,40,.7); padding: 6px 14px;
-      border-radius: 50px; border: 1px solid rgba(201,168,76,.2);
-    }
-    .service-detail-text { display: flex; flex-direction: column; gap: 24px; }
-    .service-detail-text h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 300; }
-    .service-detail-text h2 em { font-style: italic; color: var(--gold); }
-    .service-detail-text p { font-size: .9rem; color: var(--text-muted); line-height: 1.9; }
-    .benefits-list { display: flex; flex-direction: column; gap: 12px; }
-    .benefit-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px 16px; border-radius: var(--radius-sm);
-      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
-      font-size: .87rem; transition: var(--transition);
-    }
-    .benefit-item:hover { border-color: rgba(201,168,76,.2); background: rgba(201,168,76,.04); }
-    .benefit-icon { color: var(--gold); font-size: 1rem; flex-shrink: 0; }
-    .process-steps { display: flex; flex-direction: column; gap: 16px; }
-    .process-step { display: flex; gap: 16px; align-items: flex-start; }
-    .step-num {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      display: grid; place-items: center; flex-shrink: 0;
-      font-family: var(--font-body); font-weight: 700; font-size: .78rem; color: var(--navy);
-    }
-    .step-text h4 { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
-    .step-text p  { font-size: .81rem; color: var(--text-muted); line-height: 1.6; }
-
-    @media (max-width: 860px) {
-      .service-detail { grid-template-columns: 1fr; }
-      .service-detail.reverse { direction: ltr; }
-    }
-  </style>
 </head>
 <body>
-
-<div class="loader" id="loader">
-  <div class="loader-inner">
-    <div class="loader-logo">TBS GROUPE</div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-  </div>
-</div>
-
+<div class="loader" id="loader"><div class="loader-inner"><div class="loader-logo"><span>TBS</span> GROUPE</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
 <header id="site-header">
   <div class="container header-inner">
     <a href="index.html" class="logo">
-      <div class="logo-mark">T</div>
-      <div>TBS GROUPE<div class="logo-sub">Excellence &amp; Expertise</div></div>
+      <img src="logo.jpeg" alt="TBS Groupe Logo" class="logo-img" />
+      <div class="logo-text"><div class="logo-name">TBS GROUPE</div><div class="logo-sub">Logistique &amp; Transport</div></div>
     </a>
     <nav id="main-nav">
       <a href="index.html">Accueil</a>
       <a href="about.html">À propos</a>
       <a href="services.html" class="active">Services</a>
-      <a href="projets.html">Réalisations</a>
-      <a href="blog.html">Actualités</a>
-      <a href="contact.html" class="nav-cta">Devis gratuit</a>
+      <a href="projets.html">Notre flotte</a>
+      <a href="index.html#contact" class="nav-cta">Demander un devis</a>
     </nav>
-    <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="container" style="position:relative;z-index:1">
-    <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span>Services</div>
-    <div class="badge" style="margin-inline:auto;margin-bottom:20px">Notre expertise</div>
-    <h1>Nos <em>services</em></h1>
-    <p>Une offre complète et intégrée pour accompagner tous vos projets de construction et de rénovation, de la conception à la livraison.</p>
+<section style="background:var(--navy-dark);padding:140px 0 80px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="badge" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.05);margin-bottom:20px">Nos services</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:20px;">Solutions de transport <span style="color:var(--red-light)">adaptées à vos besoins</span></h1>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,.65);max-width:600px;line-height:1.7;">TBS Groupe propose une gamme complète de services logistiques et de transport au Havre et en Normandie, avec des véhicules lourds et légers.</p>
   </div>
 </section>
 
-<!-- SERVICE NAV -->
-<div style="background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.07);position:sticky;top:var(--header-h);z-index:100">
+<section class="section-py" id="lourd">
   <div class="container">
-    <div style="display:flex;gap:8px;padding-block:16px;overflow-x:auto;scrollbar-width:none">
-      <a href="#construction"    class="filter-btn active">🏗️ Construction</a>
-      <a href="#renovation"      class="filter-btn">🔨 Rénovation</a>
-      <a href="#amenagement"     class="filter-btn">🎨 Aménagement</a>
-      <a href="#genie-civil"     class="filter-btn">🏛️ Génie Civil</a>
-      <a href="#maitrise-oeuvre" class="filter-btn">📐 Maîtrise d'Œuvre</a>
-      <a href="#bureau-etudes"   class="filter-btn">📊 Bureau d'Études</a>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">🚛<span>Transport Lourd</span></div>
+        </div>
+        <div class="about-accent-card"><div class="num">26T</div><div class="lbl">Charge max.</div></div>
+      </div>
+      <div class="about-text">
+        <div class="section-header reveal">
+          <div class="badge">Transport Lourd</div>
+          <h2 class="section-title">Camions poids lourds pour vos <em>grandes charges</em></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Nos semi-remorques et porteurs lourds sont disponibles pour le transport de marchandises volumineuses, matériaux industriels, équipements et charges exceptionnelles depuis et vers le port du Havre.</p>
+        </div>
+        <div class="about-features">
+          <div class="about-feature reveal"><div class="about-feature-icon">🚛</div><div><h4>Semi-remorques</h4><p>Tracteurs et semi-remorques pour les longues distances et les charges jusqu'à 26 tonnes.</p></div></div>
+          <div class="about-feature reveal"><div class="about-feature-icon">🏭</div><div><h4>Transport industriel</h4><p>Équipements lourds, machines industrielles, matériaux de construction et charges hors-gabarit.</p></div></div>
+          <div class="about-feature reveal"><div class="about-feature-icon">⚓</div><div><h4>Logistique portuaire</h4><p>Prise en charge de conteneurs et marchandises directement depuis le port du Havre.</p></div></div>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-top:8px;align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="container">
-
-  <!-- CONSTRUCTION -->
-  <div class="service-detail reveal" id="construction">
-    <div class="service-detail-visual">
-      <span style="position:relative;z-index:1">🏗️</span>
-      <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-muted);position:relative;z-index:1">Construction Neuve</span>
-      <div class="service-label">BÂTIMENT</div>
-    </div>
-    <div class="service-detail-text">
-      <div class="badge">Service 01</div>
-      <h2>Construction <em>neuve</em></h2>
-      <p>De la maison individuelle aux complexes commerciaux, TBS GROUPE maîtrise l'ensemble du processus de construction neuve. Notre approche intégrée garantit cohérence, qualité et optimisation des coûts.</p>
-      <div class="benefits-list">
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Bâtiments résidentiels — villas, immeubles, lotissements</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Constructions commerciales et tertiaires</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Bâtiments industriels et entrepôts logistiques</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Respect des normes RT2020 et accessibilité PMR</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Matériaux labellisés et filières courtes</div>
-      </div>
-      <div class="process-steps">
-        <div class="process-step"><div class="step-num">1</div><div class="step-text"><h4>Étude de faisabilité</h4><p>Analyse du terrain, du programme et des contraintes réglementaires.</p></div></div>
-        <div class="process-step"><div class="step-num">2</div><div class="step-text"><h4>Conception &amp; plans</h4><p>Élaboration des plans d'exécution en collaboration avec votre architecte.</p></div></div>
-        <div class="process-step"><div class="step-num">3</div><div class="step-text"><h4>Réalisation</h4><p>Pilotage du chantier avec reporting hebdomadaire client.</p></div></div>
-        <div class="process-step"><div class="step-num">4</div><div class="step-text"><h4>Livraison &amp; SAV</h4><p>Réception contradictoire et garantie décennale.</p></div></div>
-      </div>
-      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-  <!-- RENOVATION -->
-  <div class="service-detail reverse reveal" id="renovation">
-    <div class="service-detail-visual">
-      <span style="position:relative;z-index:1">🔨</span>
-      <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-muted);position:relative;z-index:1">Rénovation &amp; Réhabilitation</span>
-      <div class="service-label">RÉHABILITATION</div>
-    </div>
-    <div class="service-detail-text">
-      <div class="badge">Service 02</div>
-      <h2>Rénovation &amp; <em>réhabilitation</em></h2>
-      <p>Spécialistes de la transformation de l'existant, nous intervenons sur tous types de biens pour les moderniser, les optimiser énergétiquement et leur redonner leur lustre d'antan.</p>
-      <div class="benefits-list">
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Rénovation complète ou partielle tous corps d'état</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Réhabilitation de bâtiments anciens et patrimoniaux</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Rénovation énergétique (isolation, chauffage, VMC)</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Assistance aux dossiers d'aides (MaPrimeRénov, CEE)</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Maintien en activité possible pendant les travaux</div>
-      </div>
-      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-  <!-- AMENAGEMENT -->
-  <div class="service-detail reveal" id="amenagement">
-    <div class="service-detail-visual">
-      <span style="position:relative;z-index:1">🎨</span>
-      <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-muted);position:relative;z-index:1">Aménagement Intérieur</span>
-      <div class="service-label">DESIGN</div>
-    </div>
-    <div class="service-detail-text">
-      <div class="badge">Service 03</div>
-      <h2>Aménagement <em>intérieur</em></h2>
-      <p>Notre équipe de designers et d'artisans conçoit des espaces intérieurs uniques, alliant esthétique contemporaine et fonctionnalité pratique, toujours en accord avec vos goûts et votre mode de vie.</p>
-      <div class="benefits-list">
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Conception 3D et visualisation photoréaliste</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Mobilier sur mesure et agencement optimisé</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Cuisine, salle de bain, dressing haut de gamme</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Revêtements et matériaux premium sélectionnés</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Coordination des artisans et suivi de chantier</div>
-      </div>
-      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-  <!-- GENIE CIVIL -->
-  <div class="service-detail reverse reveal" id="genie-civil">
-    <div class="service-detail-visual">
-      <span style="position:relative;z-index:1">🏛️</span>
-      <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-muted);position:relative;z-index:1">Génie Civil</span>
-      <div class="service-label">INFRASTRUCTURE</div>
-    </div>
-    <div class="service-detail-text">
-      <div class="badge">Service 04</div>
-      <h2>Génie <em>civil</em></h2>
-      <p>Nos ingénieurs spécialisés prennent en charge vos projets d'infrastructure les plus exigeants : ouvrages d'art, terrassements, fondations spéciales et réseaux.</p>
-      <div class="benefits-list">
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Terrassements généraux et VRD</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Fondations spéciales et soutènements</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Ouvrages en béton armé et charpentes métalliques</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Réseaux (assainissement, drainage, voirie)</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Dépollution et traitement des sols</div>
-      </div>
-      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-  <!-- MAITRISE OEUVRE -->
-  <div class="service-detail reveal" id="maitrise-oeuvre">
-    <div class="service-detail-visual">
-      <span style="position:relative;z-index:1">📐</span>
-      <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-muted);position:relative;z-index:1">Maîtrise d'Œuvre</span>
-      <div class="service-label">COORDINATION</div>
-    </div>
-    <div class="service-detail-text">
-      <div class="badge">Service 05</div>
-      <h2>Maîtrise <em>d'œuvre</em></h2>
-      <p>Votre interlocuteur unique pour coordonner l'ensemble des acteurs de votre chantier. Nous assurons le pilotage technique, administratif et financier de votre projet de A à Z.</p>
-      <div class="benefits-list">
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Conception et dépôt de permis de construire</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Appels d'offres et sélection des entreprises</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Direction et coordination des travaux</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Gestion planning, budget et qualité</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Assistance aux opérations de réception (AOR)</div>
-      </div>
-      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-  <!-- BUREAU ETUDES -->
-  <div class="service-detail reverse reveal" id="bureau-etudes">
-    <div class="service-detail-visual">
-      <span style="position:relative;z-index:1">📊</span>
-      <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-muted);position:relative;z-index:1">Bureau d'Études</span>
-      <div class="service-label">INGÉNIERIE</div>
-    </div>
-    <div class="service-detail-text">
-      <div class="badge">Service 06</div>
-      <h2>Bureau <em>d'études</em></h2>
-      <p>Notre bureau d'études interne apporte l'intelligence technique indispensable à la réussite de vos projets. Modélisation BIM, calculs de structure, thermique du bâtiment : nous anticipons chaque défi.</p>
-      <div class="benefits-list">
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Modélisation BIM (Building Information Modeling)</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Calculs de structure béton armé et charpente</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Études thermiques RE2020 et DPE</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Plans d'exécution et dossiers ouvrages exécutés</div>
-        <div class="benefit-item"><span class="benefit-icon">✓</span>Études géotechniques et hydrologiques</div>
-      </div>
-      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-</div>
-
-<!-- CTA -->
-<section class="cta-section section-py">
+<section class="section-py" id="leger" style="background:var(--off-white)">
   <div class="container">
-    <div class="cta-inner reveal">
-      <div class="cta-text">
-        <h2 class="section-title">Prêt à démarrer votre <em>projet</em> ?</h2>
-        <p>Obtenez une estimation gratuite et personnalisée en moins de 48 heures. Notre équipe analyse votre besoin et vous propose la solution optimale.</p>
+    <div class="about-grid" style="direction:rtl">
+      <div class="about-visual reveal" style="direction:ltr">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">🚐<span>Transport Léger</span></div>
+        </div>
+        <div class="about-accent-card"><div class="num">3,5T</div><div class="lbl">Charge max.</div></div>
       </div>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary">Devis gratuit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="tel:+33123456789" class="btn btn-outline">📞 01 23 45 67 89</a>
+      <div class="about-text" style="direction:ltr">
+        <div class="section-header reveal">
+          <div class="badge">Transport Léger</div>
+          <h2 class="section-title">Livraisons rapides et <em>flexibles</em></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Nos véhicules utilitaires légers assurent vos livraisons express, messagerie et distribution en zone urbaine et périurbaine au Havre et en Normandie.</p>
+        </div>
+        <div class="about-features">
+          <div class="about-feature reveal"><div class="about-feature-icon">🚐</div><div><h4>Fourgonnettes & camionnettes</h4><p>Véhicules légers jusqu'à 3,5 tonnes pour vos livraisons rapides et vos petits volumes.</p></div></div>
+          <div class="about-feature reveal"><div class="about-feature-icon">📦</div><div><h4>Messagerie express</h4><p>Service de messagerie rapide pour vos colis et petites marchandises avec suivi en temps réel.</p></div></div>
+          <div class="about-feature reveal"><div class="about-feature-icon">🏙️</div><div><h4>Distribution urbaine</h4><p>Livraisons en centre-ville et zones à accès restreint grâce à nos petits véhicules maniables.</p></div></div>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-top:8px;align-self:flex-start">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py" id="portuaire">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <div class="badge">Autres services</div>
+      <h2 class="section-title">Une offre <em>complète</em> pour votre logistique</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" id="groupage"><div class="service-icon">⚓</div><h3>Logistique Portuaire</h3><p>Spécialistes du port du Havre, nous assurons la prise en charge de vos conteneurs, le pré-acheminement et le post-acheminement de vos marchandises import/export.</p><a href="index.html#contact" class="service-link">Demander un devis →</a></div>
+      <div class="service-card featured reveal" data-delay="1"><div class="service-icon">📦</div><h3>Messagerie & Groupage</h3><p>Optimisez vos coûts grâce à notre service de groupage. Nous regroupons vos envois avec d'autres expéditeurs pour des tarifs compétitifs sans compromis sur les délais.</p><a href="index.html#contact" class="service-link">Demander un devis →</a></div>
+      <div class="service-card reveal" data-delay="2" id="affretement"><div class="service-icon">🔄</div><h3>Affrètement</h3><p>Besoin d'un véhicule spécifique ? Notre service d'affrètement vous propose la solution adaptée à vos besoins ponctuels ou réguliers, en France et en Europe.</p><a href="index.html#contact" class="service-link">Demander un devis →</a></div>
+      <div class="service-card reveal" id="stockage"><div class="service-icon">🏭</div><h3>Entreposage & Stockage</h3><p>Nos entrepôts au Havre vous offrent des solutions de stockage sécurisées et flexibles. Gestion des flux, préparation de commandes et distribution.</p><a href="index.html#contact" class="service-link">Demander un devis →</a></div>
+      <div class="service-card reveal" data-delay="1"><div class="service-icon">🗺️</div><h3>Transport National</h3><p>Couverture de toute la France pour vos besoins de transport longue distance. Réseau de partenaires fiables pour vous garantir un service optimal partout en France.</p><a href="index.html#contact" class="service-link">Demander un devis →</a></div>
+      <div class="service-card reveal" data-delay="2"><div class="service-icon">📱</div><h3>Suivi en temps réel</h3><p>Suivez l'avancement de vos livraisons en temps réel grâce à notre système de tracking. Transparence totale sur l'état et la position de vos marchandises.</p><a href="index.html#contact" class="service-link">En savoir plus →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Besoin d'un transport <em>sur mesure</em> ?</h2>
+    <p>Contactez TBS Groupe pour obtenir un devis personnalisé adapté à vos besoins logistiques au Havre et en Normandie.</p>
+    <div class="cta-actions">
+      <a href="index.html#contact" class="btn btn-primary">Demander un devis gratuit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="btn btn-outline">À propos de nous</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <div class="footer-main">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo" style="font-size:1.3rem">
-          <div class="logo-mark">T</div>
-          <div>TBS GROUPE<div class="logo-sub">Excellence &amp; Expertise</div></div>
-        </a>
-        <p>Expert en construction, rénovation et aménagement premium depuis 2008.</p>
-        <div class="social-links">
-          <a href="#" class="social-link">in</a><a href="#" class="social-link">f</a>
-          <a href="#" class="social-link">📷</a><a href="#" class="social-link">💬</a>
-        </div>
+        <div class="footer-logo"><img src="logo.jpeg" alt="TBS Groupe" class="footer-logo-img" /><div class="footer-logo-name">TBS GROUPE</div></div>
+        <p class="footer-desc">Entreprise de logistique et transport basée au Havre. Spécialiste du transport lourd et léger en Normandie et en France.</p>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <div class="footer-links">
-          <a href="index.html">Accueil</a><a href="about.html">À propos</a>
-          <a href="services.html">Services</a><a href="projets.html">Réalisations</a>
-          <a href="blog.html">Actualités</a><a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <div class="footer-links">
-          <a href="#construction">Construction neuve</a><a href="#renovation">Rénovation</a>
-          <a href="#amenagement">Aménagement</a><a href="#genie-civil">Génie civil</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <div style="font-size:.83rem;color:var(--text-muted);line-height:2">
-          📍 12 rue de la Construction, 75008 Paris<br>
-          📞 01 23 45 67 89<br>✉️ contact@tbs-groupe.fr
-        </div>
-      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#lourd">Transport Lourd</a></li><li><a href="#leger">Transport Léger</a></li><li><a href="#portuaire">Logistique Portuaire</a></li><li><a href="#groupage">Messagerie & Groupage</a></li></ul></div>
+      <div class="footer-col"><h4>Entreprise</h4><ul><li><a href="about.html">À propos</a></li><li><a href="projets.html">Notre flotte</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">Le Havre, Normandie</a></li><li><a href="mailto:contact@tbsgroupe.fr">contact@tbsgroupe.fr</a></li><li><a href="#">Disponible 24h/24</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 TBS GROUPE. Tous droits réservés.</p>
-      <div class="footer-legal"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2026 TBS Groupe — Logistique & Transport Le Havre. Tous droits réservés.</p><a href="#">Mentions légales</a></div>
   </div>
 </footer>
-<button class="back-to-top" id="backToTop">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
 <script>
   window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 900); });
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
-  });
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400); });
+  const toggle = document.getElementById('menu-toggle'); const nav = document.getElementById('main-nav');
   toggle.addEventListener('click', () => { toggle.classList.toggle('active'); nav.classList.toggle('open'); });
   document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { const d = e.target.dataset.delay || 0; setTimeout(() => e.target.classList.add('visible'), d * 100); observer.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  // Nav link highlight on click
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => { entries.forEach((e) => { if (e.isIntersecting) { const delay = e.target.dataset.delay || 0; setTimeout(() => e.target.classList.add('visible'), delay * 120); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
