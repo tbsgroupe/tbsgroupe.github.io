@@ -171,6 +171,10 @@ img { max-width: 100%; display: block; height: auto; }
   min-height: 100vh;
   display: grid; grid-template-columns: 1fr 1fr;
   background: var(--navy);
+  background-image: url('images/tbs-background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative; overflow: hidden;
 }
 /* Fallback image si pas de split */
