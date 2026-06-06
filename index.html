@@ -120,11 +120,7 @@
     <div class="about-grid">
       <div class="about-visual reveal">
         <div class="about-img-wrap">
-          <div class="about-img-placeholder">
-            🚛
-            <span>TBS GROUPE</span>
-            <span style="font-size:.75rem;color:var(--text-muted)">Le Havre, Normandie</span>
-          </div>
+          <img src="images/groupe_tbs.png" alt="TBS Groupe" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="about-accent-card">
           <div class="num">N°1</div>
@@ -172,8 +168,42 @@
   </div>
 </section>
 
+<!-- ALBUM PHOTO SECTION -->
+<section class="section-py" id="album" style="background:var(--off-white)">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <div class="badge">Album Photo</div>
+      <h2 class="section-title">TBS Groupe en <em>images</em></h2>
+      <div class="divider center"></div>
+      <p class="section-subtitle">Découvrez notre équipe, nos véhicules et notre quotidien au service de votre logistique au Havre.</p>
+    </div>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="images/groupe_tbs.png" alt="Équipe TBS Groupe et Flotte">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h4>Notre Équipe & Flotte</h4>
+            <p>Le Havre, Normandie</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" data-delay="1">
+        <img src="images/hero_bg.png" alt="Transport Logistique TBS">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h4>Transport Routier</h4>
+            <p>Expertise Portuaire</p>
+          </div>
+        </div>
+      </div>
+      <!-- D'autres images peuvent être ajoutées ici -->
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
-<section class="section-py" style="background:var(--off-white)">
+<section class="section-py">
   <div class="container">
     <div class="section-header centered reveal">
       <div class="badge">Nos services</div>
@@ -265,43 +295,43 @@
       <div class="divider center"></div>
     </div>
     <div class="solutions-grid">
-      <div class="solution-card reveal">
-        <div class="solution-bg">🚛</div>
-        <div class="solution-overlay">
-          <div class="solution-cat">Poids Lourds</div>
-          <div class="solution-name">Transport de Marchandises Lourdes</div>
-          <div class="solution-desc">Semi-remorques, porteurs et tracteurs pour vos charges volumineuses et industrielles.</div>
+      <div class="solution-item reveal">
+        <div class="solution-icon">🚛</div>
+        <div class="solution-content">
+          <h4>Poids Lourds</h4>
+          <h3>Transport de Marchandises Lourdes</h3>
+          <p>Semi-remorques, porteurs et tracteurs pour vos charges volumineuses et industrielles.</p>
         </div>
       </div>
-      <div class="solution-card reveal" data-delay="1">
-        <div class="solution-bg">🚐</div>
-        <div class="solution-overlay">
-          <div class="solution-cat">Véhicules Légers</div>
-          <div class="solution-name">Livraison Rapide & Messagerie</div>
-          <div class="solution-desc">Fourgonnettes et utilitaires pour vos livraisons express en zone urbaine et périurbaine.</div>
+      <div class="solution-item reveal" data-delay="1">
+        <div class="solution-icon">🚐</div>
+        <div class="solution-content">
+          <h4>Véhicules Légers</h4>
+          <h3>Livraison Rapide & Messagerie</h3>
+          <p>Fourgonnettes et utilitaires pour vos livraisons express en zone urbaine et périurbaine.</p>
         </div>
       </div>
-      <div class="solution-card reveal">
-        <div class="solution-bg">⚓</div>
-        <div class="solution-overlay">
-          <div class="solution-cat">Port du Havre</div>
-          <div class="solution-name">Logistique Portuaire Spécialisée</div>
-          <div class="solution-desc">Prise en charge conteneurs, pré et post-acheminement, gestion des flux import/export.</div>
+      <div class="solution-item reveal">
+        <div class="solution-icon">⚓</div>
+        <div class="solution-content">
+          <h4>Port du Havre</h4>
+          <h3>Logistique Portuaire Spécialisée</h3>
+          <p>Prise en charge conteneurs, pré et post-acheminement, gestion des flux import/export.</p>
         </div>
       </div>
-      <div class="solution-card reveal" data-delay="1">
-        <div class="solution-bg">🗺️</div>
-        <div class="solution-overlay">
-          <div class="solution-cat">National & Régional</div>
-          <div class="solution-name">Couverture Normandie & France</div>
-          <div class="solution-desc">Réseau de transport couvrant toute la Normandie et la France entière pour vos besoins.</div>
+      <div class="solution-item reveal" data-delay="1">
+        <div class="solution-icon">🗺️</div>
+        <div class="solution-content">
+          <h4>National & Régional</h4>
+          <h3>Couverture Normandie & France</h3>
+          <p>Réseau de transport couvrant toute la Normandie et la France entière pour vos besoins.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FLOTTE -->
+<!-- FLOTTE PREVIEW -->
 <section class="section-py" style="background:var(--off-white)">
   <div class="container">
     <div class="section-header centered reveal">
@@ -320,110 +350,94 @@
       <div class="fleet-card reveal" data-delay="1">
         <div class="fleet-icon">🚚</div>
         <h3>Porteurs Lourds</h3>
-        <p>Camions porteurs rigides pour la livraison en zone urbaine et périurbaine. Polyvalents et maniables pour les accès difficiles.</p>
+        <p>Camions porteurs rigides pour la livraison en zone urbaine et périurbaine. Maniables et polyvalents pour les accès difficiles.</p>
         <span class="fleet-tag">3,5T à 19T</span>
       </div>
       <div class="fleet-card reveal" data-delay="2">
         <div class="fleet-icon">🚐</div>
-        <h3>Utilitaires Légers</h3>
-        <p>Fourgonnettes et camionnettes pour vos livraisons express, messagerie et distribution de colis en ville et en région.</p>
+        <h3>Véhicules Légers</h3>
+        <p>Fourgonnettes et utilitaires pour vos livraisons rapides et vos petits volumes. Idéals pour la messagerie express.</p>
         <span class="fleet-tag">Jusqu'à 3,5T</span>
       </div>
     </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="projets.html" class="btn btn-outline-dark">Découvrir notre flotte</a>
+    </div>
   </div>
 </section>
 
-<!-- ZONE D'INTERVENTION -->
-<section class="zone-section section-py">
+<!-- CONTACT -->
+<section class="section-py contact-section" id="contact">
   <div class="container">
-    <div class="zone-grid">
-      <div class="zone-map reveal">
-        🗺️
-        <div class="zone-map-label">Le Havre — Normandie</div>
-      </div>
-      <div>
+    <div class="contact-grid">
+      <div class="contact-info">
         <div class="section-header reveal">
-          <div class="badge" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.05)">Zone d'intervention</div>
-          <h2 class="section-title" style="color:var(--white)">Nous intervenons partout en <em>France</em></h2>
+          <div class="badge" style="color:var(--white);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.05)">Contact</div>
+          <h2 class="section-title" style="color:var(--white)">Demander un <em>devis gratuit</em></h2>
           <div class="divider"></div>
-          <p class="section-subtitle" style="color:rgba(255,255,255,.6)">Basés au Havre, nous couvrons l'ensemble du territoire français et proposons des solutions de transport adaptées à chaque destination.</p>
+          <p class="section-subtitle" style="color:rgba(255,255,255,.6)">Besoin d'un transport ? Notre équipe vous répond sous 24h avec une solution adaptée à vos besoins.</p>
         </div>
-        <div class="zone-list">
-          <div class="zone-item reveal">
-            <div class="zone-item-icon">⚓</div>
-            <div class="zone-item-text">
-              <strong>Le Havre & Port</strong>
-              <span>Logistique portuaire, conteneurs, import/export</span>
+        <div class="contact-methods">
+          <div class="contact-method reveal">
+            <div class="contact-method-icon">📍</div>
+            <div class="contact-method-text">
+              <h4>Adresse</h4>
+              <p>Le Havre, Normandie</p>
             </div>
           </div>
-          <div class="zone-item reveal" data-delay="1">
-            <div class="zone-item-icon">🏙️</div>
-            <div class="zone-item-text">
-              <strong>Normandie</strong>
-              <span>Rouen, Caen, Évreux, Cherbourg et toute la région</span>
+          <div class="contact-method reveal" data-delay="1">
+            <div class="contact-method-icon">✉️</div>
+            <div class="contact-method-text">
+              <h4>Email</h4>
+              <p>contact@tbsgroupe.fr</p>
             </div>
           </div>
-          <div class="zone-item reveal" data-delay="2">
-            <div class="zone-item-icon">🗼</div>
-            <div class="zone-item-text">
-              <strong>Île-de-France</strong>
-              <span>Paris et la région parisienne, livraisons express</span>
-            </div>
-          </div>
-          <div class="zone-item reveal" data-delay="3">
-            <div class="zone-item-icon">🇫🇷</div>
-            <div class="zone-item-text">
-              <strong>France entière</strong>
-              <span>Couverture nationale pour tous vos besoins de transport</span>
+          <div class="contact-method reveal" data-delay="2">
+            <div class="contact-method-icon">🕒</div>
+            <div class="contact-method-text">
+              <h4>Disponibilité</h4>
+              <p>Urgences 24h/24 — 7j/7</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEMOIGNAGES -->
-<section class="section-py">
-  <div class="container">
-    <div class="section-header centered reveal">
-      <div class="badge">Témoignages</div>
-      <h2 class="section-title">Ils nous font <em>confiance</em></h2>
-      <div class="divider center"></div>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"TBS Groupe gère notre logistique portuaire depuis plusieurs mois. Leur réactivité et leur professionnalisme sont remarquables. Livraisons toujours dans les délais, même pour les urgences."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👨‍💼</div>
-          <div>
-            <div class="testimonial-name">Marc Dupont</div>
-            <div class="testimonial-role">Directeur Logistique, Import-Export Le Havre</div>
+      <div class="contact-form-card reveal" data-delay="2">
+        <form class="form-grid">
+          <div class="form-group">
+            <label for="nom">Nom Complet</label>
+            <input type="text" id="nom" placeholder="Votre nom" required>
           </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal" data-delay="1">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Nous faisons appel à TBS Groupe pour nos transports lourds réguliers. Équipe sérieuse, camions bien entretenus et chauffeurs ponctuels. Je recommande vivement leurs services."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👩‍💼</div>
-          <div>
-            <div class="testimonial-name">Sophie Martin</div>
-            <div class="testimonial-role">Responsable Achats, Industrie Normande</div>
+          <div class="form-group">
+            <label for="entreprise">Entreprise</label>
+            <input type="text" id="entreprise" placeholder="Nom de votre société">
           </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal" data-delay="2">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Excellent partenaire pour nos livraisons express en Normandie. TBS Groupe a su s'adapter à nos contraintes horaires et nous offre un service personnalisé de grande qualité."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👨‍🔧</div>
-          <div>
-            <div class="testimonial-name">Pierre Lefebvre</div>
-            <div class="testimonial-role">Gérant, Distribution Régionale</div>
+          <div class="form-group">
+            <label for="email">Email professionnel</label>
+            <input type="email" id="email" placeholder="votre@email.com" required>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" placeholder="+33 X XX XX XX XX">
+          </div>
+          <div class="form-group full">
+            <label for="service">Type de Service</label>
+            <select id="service">
+              <option value="">Sélectionner un service</option>
+              <option value="lourd">Transport Lourd</option>
+              <option value="leger">Transport Léger</option>
+              <option value="portuaire">Logistique Portuaire</option>
+              <option value="groupage">Messagerie & Groupage</option>
+              <option value="autre">Autre demande</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="message">Votre besoin de transport</label>
+            <textarea id="message" placeholder="Détaillez votre demande (origine, destination, type de marchandise, poids, délais...)"></textarea>
+          </div>
+          <div class="form-group full">
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Envoyer ma demande</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -432,100 +446,11 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <h2>Besoin d'un transport <em>fiable</em> au Havre ?</h2>
-    <p>Contactez TBS Groupe dès aujourd'hui pour obtenir un devis personnalisé. Notre équipe est disponible 24h/24 pour répondre à vos besoins logistiques.</p>
-    <div class="cta-actions">
-      <a href="#contact" class="btn btn-primary">
-        Demander un devis gratuit
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="tel:+33XXXXXXXXX" class="btn btn-outline">Nous appeler</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section-py" id="contact">
-  <div class="container">
-    <div class="section-header centered reveal">
-      <div class="badge">Contact</div>
-      <h2 class="section-title">Parlons de votre <em>projet</em></h2>
-      <div class="divider center"></div>
-      <p class="section-subtitle">Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous vous répondons sous 24 heures.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <strong>Adresse</strong>
-            <span>Le Havre, Normandie, France</span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div>
-            <strong>Téléphone</strong>
-            <span>Disponible 24h/24 — 7j/7</span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <strong>Email</strong>
-            <span>contact@tbsgroupe.fr</span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🕐</div>
-          <div>
-            <strong>Horaires</strong>
-            <span>Lundi – Vendredi : 7h00 – 19h00<br>Urgences : 24h/24</span>
-          </div>
-        </div>
-      </div>
-      <form class="contact-form reveal" data-delay="1">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" placeholder="Votre nom" />
-          </div>
-          <div class="form-group">
-            <label for="entreprise">Entreprise</label>
-            <input type="text" id="entreprise" placeholder="Votre entreprise" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="votre@email.com" />
-          </div>
-          <div class="form-group">
-            <label for="tel">Téléphone</label>
-            <input type="tel" id="tel" placeholder="+33 X XX XX XX XX" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="service">Type de service</label>
-          <select id="service">
-            <option value="">Sélectionner un service</option>
-            <option>Transport Lourd</option>
-            <option>Transport Léger</option>
-            <option>Logistique Portuaire</option>
-            <option>Messagerie & Groupage</option>
-            <option>Affrètement</option>
-            <option>Entreposage & Stockage</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Décrivez votre besoin de transport (origine, destination, type de marchandise, délai...)"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start">
-          Envoyer ma demande
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </form>
+    <h2 class="reveal">Prêt à optimiser votre <em>logistique</em> ?</h2>
+    <p class="reveal" data-delay="1">TBS Groupe vous accompagne dans tous vos projets de transport au départ ou à destination du Havre.</p>
+    <div class="cta-actions reveal" data-delay="2">
+      <a href="#contact" class="btn btn-outline">Nous contacter</a>
+      <a href="tel:+33000000000" class="btn btn-primary">Nous appeler</a>
     </div>
   </div>
 </section>
@@ -539,9 +464,7 @@
           <img src="logo.jpeg" alt="TBS Groupe" class="footer-logo-img" />
           <div class="footer-logo-name">TBS GROUPE</div>
         </div>
-        <p class="footer-desc">
-          Entreprise de logistique et transport basée au Havre. Spécialiste du transport lourd et léger en Normandie et en France.
-        </p>
+        <p class="footer-desc">Expert en logistique et transport basé au Havre. Solutions sur-mesure pour vos marchandises lourdes et légères.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -550,8 +473,6 @@
           <li><a href="services.html#leger">Transport Léger</a></li>
           <li><a href="services.html#portuaire">Logistique Portuaire</a></li>
           <li><a href="services.html#groupage">Messagerie & Groupage</a></li>
-          <li><a href="services.html#affretement">Affrètement</a></li>
-          <li><a href="services.html#stockage">Entreposage</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -559,6 +480,7 @@
         <ul>
           <li><a href="about.html">À propos</a></li>
           <li><a href="projets.html">Notre flotte</a></li>
+          <li><a href="#album">Album Photo</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -573,7 +495,10 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 TBS Groupe — Logistique & Transport Le Havre. Tous droits réservés.</p>
-      <a href="#">Mentions légales</a>
+      <div style="display:flex;gap:20px">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -581,32 +506,58 @@
 <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
 
 <script>
+  // Loader
   window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('loader').classList.add('hidden'), 900);
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+    }, 800);
   });
+
+  // Header Scroll & Back to Top
   const header = document.getElementById('site-header');
+  const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    if (window.scrollY > 400) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
   });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile Menu
   const toggle = document.getElementById('menu-toggle');
-  const nav    = document.getElementById('main-nav');
+  const nav = document.getElementById('main-nav');
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('active');
     nav.classList.toggle('open');
   });
-  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Reveal Animations
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        const delay = e.target.dataset.delay || 0;
-        setTimeout(() => e.target.classList.add('visible'), delay * 120);
-        observer.unobserve(e.target);
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.getAttribute('data-delay') || 0;
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay * 150);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+  }, { threshold: 0.15 });
+
+  reveals.forEach(reveal => observer.observe(reveal));
 </script>
+
 </body>
 </html>
