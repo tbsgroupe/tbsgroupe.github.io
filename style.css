@@ -123,8 +123,27 @@ header.scrolled { background: rgba(26,28,46,.95); backdrop-filter: blur(10px); p
 .btn-outline-dark { background: transparent; color: var(--navy); border-color: var(--navy); }
 .btn-outline-dark:hover { background: var(--navy); color: var(--white); }
 
-/* TICKER STRIP */
-.services-strip { background: var(--red); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+	/* ENVIRONMENTAL SECTION */
+	.eco-section { background: #F0F9F4; border-top: 4px solid #27AE60; }
+	.eco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 40px; }
+	.eco-card { background: var(--white); padding: 40px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(39,174,96,0.1); }
+	.eco-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: #27AE60; }
+	.eco-icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
+	.eco-card h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: #1B5E20; margin-bottom: 12px; }
+	.eco-card p { font-size: 0.9rem; color: #4E6E52; line-height: 1.6; }
+	.eco-badge { display: inline-block; padding: 6px 16px; background: rgba(39,174,96,0.1); color: #27AE60; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+
+	/* MAP SECTION */
+	.map-container { width: 100%; height: 450px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid #EEE; margin-top: 30px; }
+	.contact-details-card { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); margin-top: -60px; position: relative; z-index: 10; border-top: 4px solid var(--navy); }
+	.contact-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+	.info-item h5 { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 8px; }
+	.info-item p { font-size: 1rem; font-weight: 700; color: var(--navy); }
+	.btn-map { display: inline-flex; align-items: center; gap: 10px; background: var(--navy); color: var(--white); padding: 12px 24px; border-radius: var(--radius); font-weight: 700; margin-top: 20px; transition: var(--transition); }
+	.btn-map:hover { background: var(--light-blue); transform: translateY(-2px); }
+
+	/* TICKER STRIP */
+	.services-strip { background: var(--red); padding: 14px 0; overflow: hidden; white-space: nowrap; }
 .strip-track { display: inline-flex; animation: ticker 28s linear infinite; }
 @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 .strip-item { display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; font-size: .82rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--white); }
