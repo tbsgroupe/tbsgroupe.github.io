@@ -1,0 +1,31 @@
+{
+  "name": "TBS GROUPE - Logistique & Transport",
+  "short_name": "TBS GROUPE",
+  "description": "Expert en logistique et transport au Havre. Camions lourds et légers pour tous vos besoins de transport en Normandie et en France.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "1920x1920",
+      "type": "image/png"
+    }
+  ]
+}
